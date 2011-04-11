@@ -1,0 +1,1 @@
+Versionify.install_rake_tasks
