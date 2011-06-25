@@ -2,7 +2,7 @@ require 'rake'
 Dir["#{File.dirname __FILE__}/versionify/*.rb"].each {|file| require "#{file}" } 
 
 module Versionify
-  include Rake::DSL
+  extend Rake::DSL
   
   def self.bump level = :patch
     version = read_or_create
