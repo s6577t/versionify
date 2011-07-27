@@ -41,14 +41,20 @@ module Versionify
 
     namespace :version do
       namespace :bump do
+        
+        desc 'bump the patch'
         task :patch do
           bump :patch
           print_version
         end
+        
+        desc 'bump the minor'
         task :minor do
           bump :minor
           print_version
         end
+        
+        desc 'bump the major'
         task :major do
           bump :major
           print_version
