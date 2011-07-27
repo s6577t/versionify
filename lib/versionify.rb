@@ -1,4 +1,6 @@
 require 'rake'
+require 'rake/dsl_definition'
+
 Dir["#{File.dirname __FILE__}/versionify/*.rb"].each {|file| require "#{file}" } 
 
 module Versionify
