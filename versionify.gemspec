@@ -11,7 +11,8 @@ Gem::Specification.new do |s|
   s.homepage    = ""
   s.summary     = %q{version functionality for rails apps}
   #s.description = %q{TODO: Write a gem description}
-
+  
+  s.add_dependency 'rake', '>=0.9.2'
   s.rubyforge_project = "versionify"
 
   s.files         = `git ls-files`.split("\n")
