@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
   s.authors     = ["Sam Taylor"]
   s.email       = ["sjltaylor@gmail.com"]
   s.homepage    = ""
-  s.summary     = %q{version functionality for rails apps}
+  s.summary     = %q{versioning functionality}
   #s.description = %q{TODO: Write a gem description}
   
   s.add_dependency 'rake', '>=0.9.2'

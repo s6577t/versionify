@@ -1,11 +1,11 @@
 require 'rake'
-require 'rake/dsl_definition'
+
 
 Dir["#{File.dirname __FILE__}/versionify/*.rb"].each {|file| require "#{file}" } 
 
 module Versionify
   extend Rake::DSL
-  
+
   def self.bump level = :patch
     version = read_or_create
 
@@ -26,16 +26,16 @@ module Versionify
     write version
   end            
 
-  def self.get_version
+  def self.version
     read_or_create.join '.'
   end
 
   def self.print_version
-    puts "version #{get_version}"
+    puts "version #{version}"
   end  
-  
+
   def self.install_rake_tasks
-    
+    require 'rake/dsl_definition'
     desc 'print the current source version'
     task :version do
       print_version
@@ -43,19 +43,19 @@ module Versionify
 
     namespace :version do
       namespace :bump do
-        
+
         desc 'bump the patch'
         task :patch do
           bump :patch
           print_version
         end
-        
+
         desc 'bump the minor'
         task :minor do
           bump :minor
           print_version
         end
-        
+
         desc 'bump the major'
         task :major do
           bump :major
@@ -63,10 +63,10 @@ module Versionify
         end
       end
     end
-  
+
   end
 
-protected 
+  protected 
   def self.filepath
     '.versionify'
   end
